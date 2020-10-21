@@ -13,8 +13,19 @@ const getCats = (request, response) => {
     })
 }
 
+const getHHCDname = (request, response) => {
+    pool.query('select * from cats where id=1', (err, res) => {
+        if (err) throw err;
+        response.status(200).json(res.rows)
+    })
+}
+
+
+
+//here we will export modules
 module.exports = {
-    getCats
+    getCats,
+    getHHCDname
 }
 
 

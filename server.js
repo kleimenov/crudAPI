@@ -21,7 +21,13 @@ app.get('/', (req, res) => {
     res.json({message: 'Node.js, Express and Postgres inside one boat EEEeeeehaaaaAAAA'});
 })
 
+//here we will get response from database to '/cats'
 app.get('/cats', db.getCats)
+
+//where we will get a single user data (for instance particular user)
+app.get('/cats/1', db.getHHCDname)
+
+
 
 //set port and start listen requests 
 app.listen(PORT, () => {
